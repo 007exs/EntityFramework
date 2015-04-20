@@ -173,6 +173,34 @@ ORDER BY [c].[CustomerID]",
                 Sql);
         }
 
+        public override void From_sql_queryable_stored_procedure()
+        {
+            base.From_sql_queryable_stored_procedure();
+
+            Assert.Equal(
+                @"EXEC ProductsOnOrder",
+                Sql);
+        }
+
+        public override void From_sql_queryable_composed_stored_procedure()
+        {
+            base.From_sql_queryable_composed_stored_procedure();
+
+            Assert.Equal(
+                @"EXEC ProductsOnOrder",
+                Sql);
+        }
+
+        [Fact]
+        public override void From_sql_queryable_composed_stored_procedure_2()
+        {
+            base.From_sql_queryable_composed_stored_procedure_2();
+
+            Assert.Equal(
+                @"EXEC ProductsOnOrder",
+                Sql);
+        }
+
         public override void From_sql_annotations_do_not_affect_successive_calls()
         {
             base.From_sql_annotations_do_not_affect_successive_calls();
