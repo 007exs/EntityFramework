@@ -79,8 +79,18 @@ namespace Microsoft.Data.Entity.Relational.Tests
                 ICommandBatchPreparer batchPreparer,
                 IBatchExecutor batchExecutor,
                 IDbContextOptions options,
-                ILoggerFactory loggerFactory)
-                : base(model, entityKeyFactorySource, entityMaterializerSource, connection, batchPreparer, batchExecutor, options, loggerFactory)
+                ILoggerFactory loggerFactory,
+                IRelationalValueReaderFactory valueReaderFactory)
+                : base(
+                      model, 
+                      entityKeyFactorySource, 
+                      entityMaterializerSource, 
+                      connection, 
+                      batchPreparer, 
+                      batchExecutor, 
+                      options, 
+                      loggerFactory,
+                      valueReaderFactory)
             {
             }
         }
